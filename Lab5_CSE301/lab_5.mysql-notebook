@@ -1,0 +1,328 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "use salemanagerment;\nuse salemanagerment;-- 1. Display the clients (name) who live in the same city:\nSELECT distinct c1.Client_Name, c1.City\nFROM Clients c1\nJOIN Clients c2 ON c1.City = c2.City\nORDER BY c1.City;\n\nselect * from salesman;\n-- 2. Display city, the client names and salesman names who are lives in “Thu Dau Mot” city.\nselect c.city, c.client_name, s.salesman_name from clients c inner join salesman s on \nc.city = 'Thu Dau Mot' and c.city = s.city;\n\n-- 3. Display client name, client number, order number, salesman number, and product number for each order.\nSELECT c.Client_Name, c.Client_Number, so.Order_Number, so.Salesman_Number, sod.Product_Number\nFROM Clients c\nJOIN Salesorder so ON c.Client_Number = so.Client_Number\nJOIN Salesorderdetails sod ON so.Order_Number = sod.Order_Number;\n\n-- 4. Find each order (client_number, client_name, order_number) placed by each client.\nselect client_number, client_name, order_number from clients c inner join \n\n-- 5. Display the details of clients (client_number, client_name) and the number of orders which is paid by them.\n-- 6. Display the details of clients (client_number, client_name) who have paid for more than 2 orders.\n-- 7. Display details of clients who have paid for more than 1 order in descending order of client_number.\n-- 8. Find the salesman names who sells more than 20 products.\n-- 9. Display the client information (client_number, client_name) and order number of those clients who\n-- have order status is cancelled.\n-- 10. Display client name, client number of clients C101 and count the number of orders which were\n-- received “successful”.\n-- 11. Count the number of clients orders placed for each product.\n-- 12. Find product numbers that were ordered by more than two clients then order in descending by product number.\n\n-- b) Using nested query with operator (IN, EXISTS, ANY and ALL)\n-- 13. Find the salesman’s names who is getting the second highest salary.\n-- 14. Find the salesman’s names who is getting second lowest salary.\n-- 15. Write a query to find the name and the salary of the salesman who have a higher salary than the\n-- salesman whose salesman number is S001.\n\n-- 16. Write a query to find the name of all salesman who sold the product has number: P1002.\n-- 17. Find the name of the salesman who sold the product to client C108 with delivery status is “delivered”.\n-- 18. Display lists the ProductName in ANY records in the sale Order Details table has Order Quantity equal\n-- to 5.\n-- 19. Write a query to find the name and number of the salesman who sold pen or TV or laptop.\n-- 20. Lists the salesman’s name sold product with a product price less than 800 and Quantity_On_Hand\n-- more than 50.\n-- 21. Write a query to find the name and salary of the salesman whose salary is greater than the average\n-- salary.\n-- 22. Write a query to find the name and Amount Paid of the clients whose amount paid is greater than the\n-- average amount paid.\n-- II. Additional excersice:\n-- 23. Find the product price that was sold to Le Xuan.\n-- 24. Determine the product name, client name and amount due that was delivered.\n-- 25. Find the salesman’s name and their product name which is cancelled.\n-- 26. Find product names, prices and delivery status for those products purchased by Nguyen Thanh.\n-- 27. Display the product name, sell price, salesperson name, delivery status, and order quantity information\n-- for each customer.\n-- 28. Find the names, product names, and order dates of all sales staff whose product order status has been\n-- successful but the items have not yet been delivered to the client.\n-- 29. Find each clients’ product which in on the way.\n-- 30. Find salary and the salesman’s names who is getting the highest salary.\n-- 31. Find salary and the salesman’s names who is getting second lowest salary.\n-- 32. Display lists the ProductName in ANY records in the sale Order Details table has Order Quantity more\n-- than 9.\n-- 33. Find the name of the customer who ordered the same item multiple times.\n-- 34. Write a query to find the name, number and salary of the salemans who earns less than the average\n-- salary and works in any of Thu Dau Mot city.\n-- 35. Write a query to find the name, number and salary of the salemans who earn a salary that is higher than\n-- the salary of all the salesman have (Order_status = ‘Cancelled’). Sort the results of the salary of the lowest to\n-- highest.\n-- 36. Write a query to find the 4th maximum salary on the salesman’s table.\n-- 37. Write a query to find the 3th minimum salary in the salesman’s table.\n\n\n\n\n\n\n\n\n",
+    "options": {
+        "tabSize": 4,
+        "insertSpaces": true,
+        "indentSize": 4,
+        "defaultEOL": "CRLF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 6,
+                    "column": 18
+                },
+                "position": {
+                    "lineNumber": 6,
+                    "column": 18
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 1,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 0
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 4,
+                            "index": 0,
+                            "resultId": "c125bd82-c1a3-4e76-fc86-1baa7d8e2a48",
+                            "content": "OK, 0 records retrieved in 0.989ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 20,
+                            "length": 0
+                        },
+                        "contentStart": 19,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 71,
+                "language": "mysql",
+                "currentSet": 2,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 20,
+                            "length": 170
+                        },
+                        "contentStart": 80,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 190,
+                            "length": 25
+                        },
+                        "contentStart": 192,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 215,
+                            "length": 224
+                        },
+                        "contentStart": 309,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 439,
+                            "length": 342
+                        },
+                        "contentStart": 549,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 781,
+                            "length": 3757
+                        },
+                        "contentStart": 871,
+                        "state": 1
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 72,
+                "end": 72,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 60,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 73,
+                "end": 73,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 74,
+                "end": 74,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 75,
+                "end": 75,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 76,
+                "end": 76,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 77,
+                "end": 77,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 78,
+                "end": 78,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 79,
+                "end": 79,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 80,
+                "end": 80,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
